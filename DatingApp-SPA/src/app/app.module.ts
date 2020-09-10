@@ -31,7 +31,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { TimeagoModule } from 'ngx-timeago';
 export function tokenGetter(){
    return localStorage.getItem('token');
 }
@@ -61,6 +61,7 @@ export function tokenGetter(){
       BrowserAnimationsModule,
       NgxGalleryModule,
       FileUploadModule,
+      TimeagoModule.forRoot(),
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
