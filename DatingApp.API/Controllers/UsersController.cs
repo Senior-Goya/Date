@@ -36,7 +36,7 @@ namespace DatingApp.API.Controllers
 
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetUser")]
         public async Task<IActionResult> GetUser(int id)
         {
             var user = await _repo.GetUser(id);
@@ -44,7 +44,7 @@ namespace DatingApp.API.Controllers
             var userToReturn = this.mapper.Map<UserForDetailedDto>(user);
 
             return Ok(userToReturn);
-
+ 
         }
 
 
