@@ -9,10 +9,13 @@ import { Resolve, Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angula
 @Injectable()
 export class MemberListResolver implements Resolve<User[]> {
 
+    pageNumber = 1;
+    paggeSize = 5;
+
     constructor(private userService: UserService, private router: Router, private alertify: AlertifyService){}
 
     resolve(route: ActivatedRouteSnapshot): Observable<User[]>{
-      return  this.userService.getUsers().pipe(
+      return  this.userService.getUsers(this.pageNumber, this.paggeSize).pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

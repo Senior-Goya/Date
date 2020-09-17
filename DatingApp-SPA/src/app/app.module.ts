@@ -10,6 +10,7 @@ import { appRoutes } from './routes';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { AppComponent } from './app.component';
 
@@ -53,6 +54,7 @@ export function tokenGetter(){
    ],
    imports: [
       BrowserModule,
+      PaginationModule.forRoot(),
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule, 
