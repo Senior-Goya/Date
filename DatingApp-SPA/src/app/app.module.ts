@@ -32,6 +32,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -57,7 +58,8 @@ export function tokenGetter(){
       PaginationModule.forRoot(),
       HttpClientModule,
       FormsModule,
-      ReactiveFormsModule, 
+      ReactiveFormsModule,
+      ButtonsModule.forRoot(),
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
       BrowserAnimationsModule,
